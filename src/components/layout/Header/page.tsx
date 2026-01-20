@@ -10,9 +10,9 @@ const Header = () => {
 
    return (
       <header
-         className={`absolute top-0 left-0 w-full z-50 transition-all duration-500 bg-green-500`}
+         className={`absolute top-0 left-0 w-full z-50 transition-all duration-500`}
       >
-         <div className="max-w-6xl mx-auto flex items-center justify-between md:p-3">
+         <div className="max-w-6xl mx-auto flex items-center justify-between">
             <Link
                href="/"
                className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105"
@@ -29,7 +29,7 @@ const Header = () => {
                />
             </Link>
 
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-8 bg-amber-700 h-20 rounded-b-2xl">
                {["Home", "Menu", "About", "Locations", "Contact"].map(
                   (item, idx) => (
                      <Link

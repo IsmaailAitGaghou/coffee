@@ -1,30 +1,52 @@
+/* Fontshare Tanker import - serves @font-face for Tanker weights 400 and 700 */
+@import url("https://api.fontshare.com/v2/css?f[]=tanker:400,700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   --background: #ffffff;
+   --foreground: #171717;
+   /* Open Sans variable is provided by next/font and attached as a class on <body>
+      We reference the CSS variable name set in layout.tsx: --font-open-sans */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+   :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+   background: var(--background);
+   color: var(--foreground);
+   /* Use Open Sans variable injected by next/font. Fallback to system sans */
+   font-family: var(
+      --font-open-sans,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial
+   );
 }
 
 html {
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
+}
+
+/* Headings use Tanker from Fontshare */
+h1,
+h2,
+h3 {
+   font-family: "tanker", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial;
+
 }
